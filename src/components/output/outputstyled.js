@@ -1,5 +1,4 @@
 import styled from "styled-components"
-// import Output from "./Output"
 
 
 export const SOutput = styled.div`

@@ -21,19 +21,15 @@ export const GlobalStyle = createGlobalStyle`
 
 
     picture {
-        
-        position: fixed;
-        /* top: 0;
-        left: 0; */
-        /* width: 100%;
-        height: 100vh; */
+        position: absolute;
+        top: 0;
         z-index: -10;
+        @media screen and (width > 375px) {
+            position: fixed;
+        }
        
     }
 
-    h1 {
-        color: red;
-    }
-
+ 
 
 `

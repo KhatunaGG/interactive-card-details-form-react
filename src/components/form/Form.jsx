@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import Output from '../output/Output';
 import "../../App.css";
 
@@ -17,8 +17,8 @@ import { InputMask } from '@react-input/mask';
 
 const Form = ({ formValidation, value, handleChange, error, show }) => {
 
-
-
+const inputRef = useRef(null)
+console.log(inputRef.current)
 
     return (
         <Form_div>
@@ -45,6 +45,7 @@ const Form = ({ formValidation, value, handleChange, error, show }) => {
                         className='input' type="number" name="cardnumber" id="cardnumber" required placeholder="e.g. 1234 5678 9123 0000" maxLength={19}
                         onChange={handleChange}
                         value={value.cardnumber}
+                        ref={inputRef}
 
                     />
 
@@ -71,7 +72,7 @@ const Form = ({ formValidation, value, handleChange, error, show }) => {
                                 onChange={handleChange}
                                 value={value.year}
                             />
-                            {error.month && <Small>{error.year}</Small>}
+                            {error.year && <Small>{error.year}</Small>}
                         </Month_div>
                         <Month_div >
                             <Exp__label htmlFor="">CVC</Exp__label>
@@ -79,7 +80,7 @@ const Form = ({ formValidation, value, handleChange, error, show }) => {
                                 onChange={handleChange}
                                 value={value.cvc}
                             />
-                            {error.month && <Small>{error.cvc}</Small>}
+                            {error.cvc && <Small>{error.cvc}</Small>}
                         </Month_div>
                     </Exp__detales>
                 </Exp__inner>

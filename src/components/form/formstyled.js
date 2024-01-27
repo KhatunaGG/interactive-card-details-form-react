@@ -14,7 +14,6 @@ export const Form_div = styled.div`
 `
 
 export const Input__item_div = styled.div`
-    /* display: ${({flexItem}) => flexItem ? 'flex' : ''}; */
     width: 100%;
     position: relative;
 `

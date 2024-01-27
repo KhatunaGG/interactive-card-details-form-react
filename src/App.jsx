@@ -40,6 +40,7 @@ function App() {
     })
   }
 
+ 
   const getErrors = (value) => {
     let error = {};
     if (!value.cardholder) {
@@ -53,25 +54,15 @@ function App() {
     }
     if (!value.month) {
       error.month = 'Can’t be blank'
-    } else if (value.month.length !== 2 || + value.month > 12 || + value.month < 0) {
+    } else if (+value.month.length !== 2 || +value.month > 12 || +value.month < 0) {
       error.month = 'not a valid...'
     }
-    //     else {
-    //   error.month = ''
-    // }
-
-
     if (!value.year) {
       error.year = 'Can’t be blank';
-
-
-    } else if (value.year.length !== 2 || +value.year < 0) {
+    } else if (+value.year > (+value.year + 4) || +value.year < 0 || +value.year.length !== 2) {
+      console.log(value)
       error.year = 'Not a valid expiration year';
-    } 
-    // else {
-    //   error.year = ''
-    // }
-
+    }
     if (!value.cvc) {
       error.cvc = 'Can’t be blank'
     } else if (value.cvc.length !== 3) {
@@ -79,6 +70,7 @@ function App() {
     }
     return error
   }
+
 
   const formValidation = (e) => {
     e.preventDefault();
@@ -97,7 +89,7 @@ function App() {
     if (submit === true) {
       setShow(!show)
       setInputWrapper(true)
-      
+
     }
   }
 
@@ -122,8 +114,8 @@ function App() {
           show={show}
           setsShow={setShow}
           inputWrapper={inputWrapper}
-          // InputMask={InputMask}
-       
+        // InputMask={InputMask}
+
         />
       </SMain>
     </div>

@@ -6,9 +6,6 @@ export const Card_section = styled.div`
     width: 100%;
     height: 100%;
 
-    @media screen and (width > 375px) {
-        
-    }
 `
 
 export const Card_div = styled.div`
